@@ -1,7 +1,7 @@
 {
   "name": "cypress-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a demo project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/namykay10/cypress-practice.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Orinami Kure",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/namykay10/cypress-practice/issues"
