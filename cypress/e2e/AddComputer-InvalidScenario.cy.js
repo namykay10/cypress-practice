@@ -18,7 +18,7 @@ describe('Landing Page', () => {
     cy.get(addComputer.computerNameInput).clear().type(addComputer.computerNameText1)
     cy.get(addComputer.introducedInput).clear().type(addComputer.introducedText1)
     cy.get(addComputer.discontinuedInput).clear().type(addComputer.discontinuedText1)
-    cy.get(addComputer.companyDropdown).clear().select()
+    cy.get(addComputer.companyDropdown).select()
     cy.get(addComputer.createComputerBtn).click({force:true})
   })
 
@@ -27,8 +27,40 @@ describe('Landing Page', () => {
     cy.get(addComputer.computerNameInput).clear().type(addComputer.computerNameText5)
     cy.get(addComputer.introducedInput).clear().type(addComputer.introducedText2)
     cy.get(addComputer.discontinuedInput).clear().type(addComputer.discontinuedText2)
-    cy.get(addComputer.companyDropdown).clear().select(5)
+    cy.get(addComputer.companyDropdown).select(5)
     cy.get(addComputer.createComputerBtn).click({force:true})
   })
+
+  it ('Wrong date format for introduced date (test should fail)', () => {
+    cy.visit('/new')
+    cy.get(addComputer.computerNameInput).clear().type(addComputer.computerNameText2)
+    cy.get(addComputer.introducedInput).clear().type(addComputer.introducedText5)
+    cy.get(addComputer.discontinuedInput).clear().type(addComputer.discontinuedText3)
+    cy.get(addComputer.companyDropdown).select(6)
+    cy.get(addComputer.createComputerBtn).click({force:true})
+    cy.wait(3000)
+  })
+
+  it ('Add computer with existing computer name (test should fail)', () => {
+    cy.visit('/new')
+    cy.get(addComputer.computerNameInput).clear().type(addComputer.computerNameText4)
+    cy.get(addComputer.introducedInput).clear().type(addComputer.introducedText4)
+    cy.get(addComputer.discontinuedInput).clear().type(addComputer.discontinuedText4)
+    cy.get(addComputer.companyDropdown).select(0)
+    cy.get(addComputer.createComputerBtn).click({force:true})
+    cy.wait(3000)
+  })
+
+  it ('Discontinued date is less than introduced date (test should fail)', () => {
+    cy.visit('/new')
+    cy.get(addComputer.computerNameInput).clear().type(addComputer.computerNameText2)
+    cy.get(addComputer.introducedInput).clear().type(addComputer.introducedText2)
+    cy.get(addComputer.discontinuedInput).clear().type(addComputer.discontinuedText3)
+    cy.get(addComputer.companyDropdown).select(2)
+    cy.get(addComputer.createComputerBtn).click({force:true})
+    cy.wait(3000)
+    cy.get(addComputer.cancelBtn).click({force:true})
+  })
+
   
 })
