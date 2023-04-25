@@ -8,9 +8,6 @@ module.exports = defineConfig({
     "requestTimeout": 10000,
     "viewportHeight": 800,
     "viewportWidth": 1500,
-    "testFiles": "**/*.feature",
-    //"ignoreTestFiles": ["**/*.js"],
-    "supportFile": "cypress/support/index.js"
   },
     
    // setupNodeEvents(on, config) {
