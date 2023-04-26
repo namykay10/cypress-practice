@@ -36,7 +36,7 @@ export const filterList = {
     filterCompBox: '#searchbox',
     filterCompBoxInput1: '',
     filterCompBoxInput2: 'ASCI',
-    filterCompBoxInput3: 'Xerox',
+    filterCompBoxInput3: 'Bash',
     filterCompBoxInput4: '2022-11-28',
     filterCompBoxInput5: '2023-04-21',
     filterCompBoxInput6: 'Orinami',
